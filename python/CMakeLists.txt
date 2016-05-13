@@ -41,3 +41,5 @@ include(GrTest)
 
 set(GR_TEST_TARGET_DEPS gnuradio-ccsds)
 set(GR_TEST_PYTHON_DIRS ${CMAKE_BINARY_DIR}/swig)
+GR_ADD_TEST(qa_ccsds_encoder ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_ccsds_encoder.py)
+GR_ADD_TEST(qa_ccsds_decoder ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_ccsds_decoder.py)

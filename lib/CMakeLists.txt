@@ -24,9 +24,15 @@ include(GrPlatform) #define LIB_SUFFIX
 
 include_directories(${Boost_INCLUDE_DIR})
 link_directories(${Boost_LIBRARY_DIRS})
-
 list(APPEND ccsds_sources
-)
+    fec-3.0.1/encode_rs_ccsds.c
+    fec-3.0.1/decode_rs_ccsds.c
+    fec-3.0.1/encode_rs_8.c
+    fec-3.0.1/decode_rs_8.c
+    reed_solomon.cc
+    ccsds_encoder_impl.cc
+    ccsds_decoder_impl.cc
+    )
 
 set(ccsds_sources "${ccsds_sources}" PARENT_SCOPE)
 if(NOT ccsds_sources)

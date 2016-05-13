@@ -8,6 +8,12 @@
 %include "ccsds_swig_doc.i"
 
 %{
+#include "ccsds/ccsds_encoder.h"
+#include "ccsds/ccsds_decoder.h"
 %}
 
 
+%include "ccsds/ccsds_encoder.h"
+GR_SWIG_BLOCK_MAGIC2(ccsds, ccsds_encoder);
+%include "ccsds/ccsds_decoder.h"
+GR_SWIG_BLOCK_MAGIC2(ccsds, ccsds_decoder);
