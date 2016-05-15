@@ -58,6 +58,7 @@
     <key>printing</key>
     <value>False</value>
     <type>enum</type>
+    <hide>part</hide>
     <option>
         <name>Yes</name>
         <key>True</key>
@@ -72,6 +73,7 @@
     <key>verbose</key>
     <value>False</value>
     <type>enum</type>
+    <hide>part</hide>
     <option>
         <name>Yes</name>
         <key>True</key>
