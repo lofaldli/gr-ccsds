@@ -31,6 +31,7 @@ namespace gr {
     class ccsds_encoder_impl : public ccsds_encoder
     {
      private:
+         size_t d_itemsize;
          bool d_rs_encode;
          bool d_interleave;
          bool d_scramble;
@@ -52,7 +53,7 @@ namespace gr {
       int calculate_output_stream_length(const gr_vector_int &ninput_items);
 
      public:
-      ccsds_encoder_impl(const std::string& len_tag_key, bool rs_encode, bool interleave, bool scramble, bool printing, bool verbose);
+      ccsds_encoder_impl(size_t itemsize, const std::string& len_tag_key, bool rs_encode, bool interleave, bool scramble, bool printing, bool verbose);
       ~ccsds_encoder_impl();
 
       // Where all the action really happens

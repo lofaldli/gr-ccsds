@@ -4,7 +4,23 @@
   <key>ccsds_ccsds_encoder</key>
   <category>ccsds</category>
   <import>import ccsds</import>
-  <make>ccsds.ccsds_encoder($len_tag_key, $rs_encode, $interleave, $scramble, $printing, $verbose)</make>
+  <make>ccsds.ccsds_encoder($type.size, $len_tag_key, $rs_encode, $interleave, $scramble, $printing, $verbose)</make>
+  <param>
+      <name>Input type</name>
+      <key>type</key>
+      <type>enum</type>
+      <hide>part</hide>
+      <option>
+          <name>PDU Message</name>
+          <key>message</key>
+          <opt>size:0</opt>
+      </option>
+      <option>
+          <name>Tagged byte stream</name>
+          <key>byte</key>
+          <opt>size:gr.sizeof_char</opt>
+      </option>
+  </param>
   <param>
     <name>Length tag key</name>
     <key>len_tag_key</key>
@@ -58,6 +74,7 @@
     <key>printing</key>
     <value>False</value>
     <type>enum</type>
+    <hide>part</hide>
     <option>
         <name>Yes</name>
         <key>True</key>
@@ -72,6 +89,7 @@
     <key>verbose</key>
     <value>False</value>
     <type>enum</type>
+    <hide>part</hide>
     <option>
         <name>Yes</name>
         <key>True</key>
@@ -83,7 +101,7 @@
   </param>
   <sink>
     <name>in</name>
-    <type>message</type>
+    <type>$type</type>
   </sink>
   <source>
     <name>out</name>

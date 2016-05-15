@@ -46,7 +46,7 @@ namespace gr {
        * class. ccsds::ccsds_encoder::make is the public interface for
        * creating new instances.
        */
-      static sptr make(const std::string& len_tag_key="packet_len", bool rs_encode=true, bool interleave=true, bool scramble=true, bool printing=false, bool verbose=false);
+      static sptr make(size_t itemsize=0, const std::string& len_tag_key="packet_len", bool rs_encode=true, bool interleave=true, bool scramble=true, bool printing=false, bool verbose=false);
     };
 
   } // namespace ccsds
