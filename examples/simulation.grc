@@ -410,7 +410,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(768, 395)</value>
+      <value>(1288, 443)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -469,7 +469,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(480, 363)</value>
+      <value>(776, 379)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -520,11 +520,11 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(48, 539)</value>
+      <value>(16, 251)</value>
     </param>
     <param>
       <key>_rotation</key>
-      <value>180</value>
+      <value>0</value>
     </param>
     <param>
       <key>id</key>
@@ -579,7 +579,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(696, 281)</value>
+      <value>(1040, 281)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -611,7 +611,7 @@
     </param>
   </block>
   <block>
-    <key>blocks_message_strobe</key>
+    <key>blocks_rotator_cc</key>
     <param>
       <key>alias</key>
       <value></value>
@@ -626,62 +626,11 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>0</value>
+      <value>True</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(56, 187)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>180</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_message_strobe_0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>msg</key>
-      <value>pmt.intern("TEST")</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>period</key>
-      <value>40</value>
-    </param>
-  </block>
-  <block>
-    <key>blocks_random_pdu</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>mask</key>
-      <value>0xFF</value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(40, 251)</value>
+      <value>(1144, 291)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -689,27 +638,19 @@
     </param>
     <param>
       <key>id</key>
-      <value>blocks_random_pdu_0</value>
-    </param>
-    <param>
-      <key>length_modulo</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>maxsize</key>
-      <value>1115</value>
+      <value>blocks_rotator_cc_0</value>
     </param>
     <param>
       <key>maxoutbuf</key>
       <value>0</value>
     </param>
     <param>
-      <key>minsize</key>
-      <value>1115</value>
-    </param>
-    <param>
       <key>minoutbuf</key>
       <value>0</value>
+    </param>
+    <param>
+      <key>phase_inc</key>
+      <value>0.001</value>
     </param>
   </block>
   <block>
@@ -732,11 +673,11 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(32, 419)</value>
+      <value>(168, 267)</value>
     </param>
     <param>
       <key>_rotation</key>
-      <value>180</value>
+      <value>0</value>
     </param>
     <param>
       <key>id</key>
@@ -768,53 +709,6 @@
     </param>
   </block>
   <block>
-    <key>blocks_tagged_stream_to_pdu</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(40, 355)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_tagged_stream_to_pdu_0</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>byte</value>
-    </param>
-    <param>
-      <key>tag</key>
-      <value>packet_len</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-  </block>
-  <block>
     <key>blocks_throttle</key>
     <param>
       <key>alias</key>
@@ -834,7 +728,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(64, 491)</value>
+      <value>(864, 275)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -858,11 +752,11 @@
     </param>
     <param>
       <key>samples_per_second</key>
-      <value>samp_rate/sps * (1115.0/1279) / 8</value>
+      <value>samp_rate</value>
     </param>
     <param>
       <key>type</key>
-      <value>byte</value>
+      <value>complex</value>
     </param>
     <param>
       <key>vlen</key>
@@ -897,7 +791,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1200, 523)</value>
+      <value>(1696, 571)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -952,7 +846,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(248, 235)</value>
+      <value>(400, 251)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -961,6 +855,10 @@
     <param>
       <key>id</key>
       <value>ccsds_ccsds_encoder_0</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>byte</value>
     </param>
     <param>
       <key>interleave</key>
@@ -1015,7 +913,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(920, 395)</value>
+      <value>(1440, 443)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1082,7 +980,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(800, 563)</value>
+      <value>(1296, 595)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1133,7 +1031,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(456, 251)</value>
+      <value>(632, 251)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1184,7 +1082,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1128, 433)</value>
+      <value>(1648, 481)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1235,7 +1133,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1016, 563)</value>
+      <value>(1512, 595)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1286,7 +1184,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(848, 283)</value>
+      <value>(1320, 331)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1365,7 +1263,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(880, 179)</value>
+      <value>(1576, 291)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -1630,49 +1528,37 @@
   </connection>
   <connection>
     <source_block_id>analog_random_source_x_0</source_block_id>
-    <sink_block_id>blocks_throttle_0</sink_block_id>
+    <sink_block_id>blocks_stream_to_tagged_stream_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
   <connection>
     <source_block_id>blocks_add_xx_0</source_block_id>
+    <sink_block_id>blocks_rotator_cc_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>blocks_rotator_cc_0</source_block_id>
     <sink_block_id>freq_xlating_fir_filter_xxx_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>blocks_add_xx_0</source_block_id>
+    <source_block_id>blocks_rotator_cc_0</source_block_id>
     <sink_block_id>qtgui_freq_sink_x_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>blocks_message_strobe_0</source_block_id>
-    <sink_block_id>blocks_random_pdu_0</sink_block_id>
-    <source_key>strobe</source_key>
-    <sink_key>generate</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_random_pdu_0</source_block_id>
-    <sink_block_id>ccsds_ccsds_encoder_0</sink_block_id>
-    <source_key>pdus</source_key>
-    <sink_key>in</sink_key>
-  </connection>
-  <connection>
     <source_block_id>blocks_stream_to_tagged_stream_0</source_block_id>
-    <sink_block_id>blocks_tagged_stream_to_pdu_0</sink_block_id>
+    <sink_block_id>ccsds_ccsds_encoder_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>blocks_tagged_stream_to_pdu_0</source_block_id>
-    <sink_block_id>ccsds_ccsds_encoder_0</sink_block_id>
-    <source_key>pdus</source_key>
-    <sink_key>in</sink_key>
-  </connection>
-  <connection>
     <source_block_id>blocks_throttle_0</source_block_id>
-    <sink_block_id>blocks_stream_to_tagged_stream_0</sink_block_id>
+    <sink_block_id>blocks_add_xx_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -1696,7 +1582,7 @@
   </connection>
   <connection>
     <source_block_id>digital_constellation_modulator_0</source_block_id>
-    <sink_block_id>blocks_add_xx_0</sink_block_id>
+    <sink_block_id>blocks_throttle_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>

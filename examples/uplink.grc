@@ -284,7 +284,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(136, 283)</value>
+      <value>(112, 283)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -352,6 +352,10 @@
     <param>
       <key>id</key>
       <value>ccsds_ccsds_encoder_0</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>message</value>
     </param>
     <param>
       <key>interleave</key>
