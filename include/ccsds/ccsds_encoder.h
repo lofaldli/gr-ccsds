@@ -29,8 +29,10 @@ namespace gr {
   namespace ccsds {
 
     /*!
-     * \brief <+description of block+>
+     * \brief Create Reed Solomon Encoded CCSDS frames
      * \ingroup ccsds
+     *
+     * Description of the block
      *
      */
     class CCSDS_API ccsds_encoder : virtual public gr::tagged_stream_block
@@ -41,12 +43,14 @@ namespace gr {
       /*!
        * \brief Return a shared_ptr to a new instance of ccsds::ccsds_encoder.
        *
-       * To avoid accidental use of raw pointers, ccsds::ccsds_encoder's
-       * constructor is in a private implementation
-       * class. ccsds::ccsds_encoder::make is the public interface for
-       * creating new instances.
        */
       static sptr make(size_t itemsize=0, const std::string& len_tag_key="packet_len", bool rs_encode=true, bool interleave=true, bool scramble=true, bool printing=false, bool verbose=false);
+
+      /*!
+       * \brief return the number of frames sent
+       *
+       */
+      virtual uint32_t num_frames() const = 0;
     };
 
   } // namespace ccsds

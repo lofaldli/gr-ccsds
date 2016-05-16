@@ -108,7 +108,7 @@ namespace gr {
                       }
 
                       if (d_verbose) {
-                          printf("\tframes received: %li\n\tframes decoded: %li\n\tsubframes decoded: %li\n",
+                          printf("\tframes received: %i\n\tframes decoded: %i\n\tsubframes decoded: %i\n",
                                   d_num_frames_received,
                                   d_num_frames_decoded,
                                   d_num_subframes_decoded);

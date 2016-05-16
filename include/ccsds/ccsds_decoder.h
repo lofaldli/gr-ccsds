@@ -29,7 +29,7 @@ namespace gr {
   namespace ccsds {
 
     /*!
-     * \brief <+description of block+>
+     * \brief Decodes Reed Solomon encoded CCSDS frames
      * \ingroup ccsds
      *
      */
@@ -41,12 +41,22 @@ namespace gr {
       /*!
        * \brief Return a shared_ptr to a new instance of ccsds::ccsds_decoder.
        *
-       * To avoid accidental use of raw pointers, ccsds::ccsds_decoder's
-       * constructor is in a private implementation
-       * class. ccsds::ccsds_decoder::make is the public interface for
-       * creating new instances.
        */
       static sptr make(int threshold=0, bool rs_decode=true, bool descramble=true, bool deinterleave=true, bool verbose=false, bool printing=false);
+
+      /*!
+       * \brief return number of received frames
+       */
+      virtual uint32_t num_frames_received() const = 0;
+      /*!
+       * \brief return number of decoded frames
+       */
+      virtual uint32_t num_frames_decoded() const = 0;
+      /*!
+       * \brief return number of decoded subframes
+       */
+      virtual uint32_t num_subframes_decoded() const = 0;
+
     };
 
   } // namespace ccsds

@@ -52,7 +52,7 @@ namespace gr {
         d_printing(printing),
         d_verbose(verbose),
         d_curr_len(0),
-        d_num_packets(0)
+        d_num_frames(0)
     {
       if (d_itemsize == 0) {
           message_port_register_in(pmt::mp("in"));
@@ -143,10 +143,10 @@ namespace gr {
           scramble(d_pkt.codeword, CODEWORD_LEN);
       }
 
-      d_num_packets++;
+      d_num_frames++;
       if (d_verbose) {
-          printf("[ENCODER] sending %i bytes of data\n", TOTAL_FRAME_LEN);
-          printf("[ENCODER] number of packets transmitted: %i\n", d_num_packets);
+          printf("sending %i bytes of data\n", TOTAL_FRAME_LEN);
+          printf("number of frames transmitted: %i\n", d_num_frames);
       }
 
       if (d_printing) {

@@ -38,7 +38,7 @@ namespace gr {
          bool d_printing;
          bool d_verbose;
 
-         uint32_t d_num_packets;
+         uint32_t d_num_frames;
 
          pmt::pmt_t d_curr_meta;
          pmt::pmt_t d_curr_vec;
@@ -55,6 +55,8 @@ namespace gr {
      public:
       ccsds_encoder_impl(size_t itemsize, const std::string& len_tag_key, bool rs_encode, bool interleave, bool scramble, bool printing, bool verbose);
       ~ccsds_encoder_impl();
+
+      uint32_t num_frames() const {return d_num_frames;}
 
       // Where all the action really happens
       int work(int noutput_items,

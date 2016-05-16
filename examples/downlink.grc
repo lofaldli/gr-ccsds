@@ -650,88 +650,6 @@
     </param>
   </block>
   <block>
-    <key>blocks_ctrlport_monitor</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>en</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(728, 200)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_ctrlport_monitor_0</value>
-    </param>
-  </block>
-  <block>
-    <key>blocks_ctrlport_probe2_x</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>desc</key>
-      <value>Sample Points</value>
-    </param>
-    <param>
-      <key>disp_mask</key>
-      <value>gr.DISPTIME</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(536, 652)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_ctrlport_probe2_x_0</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>byte</value>
-    </param>
-    <param>
-      <key>len</key>
-      <value>1024</value>
-    </param>
-    <param>
-      <key>name</key>
-      <value>samples</value>
-    </param>
-  </block>
-  <block>
     <key>blocks_file_sink</key>
     <param>
       <key>append</key>
@@ -865,7 +783,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(536, 500)</value>
+      <value>(536, 515)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -897,7 +815,7 @@
     </param>
     <param>
       <key>verbose</key>
-      <value>False</value>
+      <value>True</value>
     </param>
   </block>
   <block>
@@ -987,7 +905,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(112, 540)</value>
+      <value>(112, 539)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1077,7 +995,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(336, 540)</value>
+      <value>(336, 539)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2923,12 +2841,6 @@
   <connection>
     <source_block_id>digital_costas_loop_cc_0</source_block_id>
     <sink_block_id>qtgui_const_sink_x_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>digital_diff_decoder_bb_0</source_block_id>
-    <sink_block_id>blocks_ctrlport_probe2_x_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
