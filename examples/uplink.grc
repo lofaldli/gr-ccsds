@@ -133,6 +133,49 @@
     </param>
   </block>
   <block>
+    <key>variable_function_probe</key>
+    <param>
+      <key>block_id</key>
+      <value>ccsds_encoder</value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>function_args</key>
+      <value></value>
+    </param>
+    <param>
+      <key>function_name</key>
+      <value>num_frames</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(608, 11)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>frames_sent</value>
+    </param>
+    <param>
+      <key>poll_rate</key>
+      <value>10</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>0</value>
+    </param>
+  </block>
+  <block>
     <key>variable</key>
     <param>
       <key>comment</key>
@@ -211,6 +254,49 @@
     <param>
       <key>value</key>
       <value>5</value>
+    </param>
+  </block>
+  <block>
+    <key>variable_qtgui_label</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>frames_sent</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>formatter</key>
+      <value>None</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(784, 43)</value>
+    </param>
+    <param>
+      <key>gui_hint</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>variable_qtgui_label_0</value>
+    </param>
+    <param>
+      <key>label</key>
+      <value>frames sent</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>raw</value>
     </param>
   </block>
   <block>
@@ -300,7 +386,7 @@
     </param>
     <param>
       <key>id</key>
-      <value>ccsds_ccsds_encoder_0</value>
+      <value>ccsds_encoder</value>
     </param>
     <param>
       <key>type</key>
@@ -1223,12 +1309,12 @@
   </block>
   <connection>
     <source_block_id>blocks_socket_pdu_0</source_block_id>
-    <sink_block_id>ccsds_ccsds_encoder_0</sink_block_id>
+    <sink_block_id>ccsds_encoder</sink_block_id>
     <source_key>pdus</source_key>
     <sink_key>in</sink_key>
   </connection>
   <connection>
-    <source_block_id>ccsds_ccsds_encoder_0</source_block_id>
+    <source_block_id>ccsds_encoder</source_block_id>
     <sink_block_id>digital_constellation_modulator_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
