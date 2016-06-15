@@ -3,9 +3,9 @@ brief: Short description of gr-ccsds
 tags: # Tags are arbitrary, but look at CGRAN what other authors are using
   - sdr
 author:
-  - Author Name <authors@email.address>
+  - André Løfldli <andre@lofaldli.com>
 copyright_owner:
-  - Copyright Owner 1
+  - André Løfaldli
 license:
 #repo: # Put the URL of the repository here, or leave blank for default
 #website: <module_website> # If you have a separate project website, put it here
