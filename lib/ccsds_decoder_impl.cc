@@ -22,6 +22,7 @@
 #include "config.h"
 #endif
 
+#include <stdio.h>
 #include <gnuradio/io_signature.h>
 #include <volk/volk.h>
 #include "ccsds_decoder_impl.h"
