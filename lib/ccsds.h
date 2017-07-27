@@ -23,6 +23,7 @@
 #define __CCSDS_H__
 
 #include "stdint.h"
+#include <stdio.h>
 
 // reed solomon(233,255) constants
 #define RS_BITS_PER_SYM 8
