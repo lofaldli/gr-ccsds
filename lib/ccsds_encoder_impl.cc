@@ -45,7 +45,7 @@ namespace gr {
     ccsds_encoder_impl::ccsds_encoder_impl(size_t itemsize, const std::string& len_tag_key, bool rs_encode, bool interleave, bool scramble, bool printing, bool verbose)
       : gr::tagged_stream_block("ccsds_encoder",
               gr::io_signature::make(itemsize==0 ? 0:1, itemsize==0 ? 0:1, itemsize),
-              gr::io_signature::make(1, 1, sizeof(uint8_t)), "packet_len"),
+              gr::io_signature::make(1, 1, sizeof(uint8_t)), len_tag_key),
         d_itemsize(itemsize),
         d_rs_encode(rs_encode),
         d_interleave(interleave),
