@@ -1,4 +1,4 @@
-# gr-ccsds
+# gr-ccsds ![][badge1] ![][badge2] ![][badge3] 
 
 this is a GNU Radio module for processing data which is encoded according to the CCSDS Recommended Standard for [TM Synchronization and Channel Coding][ccsds].
 it handles Reed Solomon, interleaving and scrambling/randomization.
@@ -26,3 +26,6 @@ then clone this repo and follow these instructions
 [ccsds]: https://public.ccsds.org/Pubs/131x0b2ec1.pdf
 [ntnu]: https://ntnu.edu
 [pybombs]: https://github.com/gnuradio/pybombs
+[badge1]: https://img.shields.io/badge/Ubuntu-14.04-brightgreen.svg
+[badge2]: https://img.shields.io/badge/Ubuntu-16.04-brightgreen.svg
+[badge3]: https://img.shields.io/badge/Ubuntu-17.04-red.svg
