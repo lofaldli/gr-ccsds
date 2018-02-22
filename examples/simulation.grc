@@ -89,116 +89,6 @@
     </param>
     <param>
       <key>value</key>
-      <value>bandwidth_conf</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(912, 19)</value>
-    </param>
-    <param>
-      <key>gui_hint</key>
-      <value>11,0</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>bandwidth</value>
-    </param>
-    <param>
-      <key>label</key>
-      <value></value>
-    </param>
-    <param>
-      <key>min_len</key>
-      <value>200</value>
-    </param>
-    <param>
-      <key>orient</key>
-      <value>Qt.Horizontal</value>
-    </param>
-    <param>
-      <key>start</key>
-      <value>1e3</value>
-    </param>
-    <param>
-      <key>step</key>
-      <value>1e3</value>
-    </param>
-    <param>
-      <key>stop</key>
-      <value>max(1e6,samp_rate/2)</value>
-    </param>
-    <param>
-      <key>rangeType</key>
-      <value>float</value>
-    </param>
-    <param>
-      <key>widget</key>
-      <value>counter_slider</value>
-    </param>
-  </block>
-  <block>
-    <key>variable_config</key>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>config_file</key>
-      <value>ccsds.conf</value>
-    </param>
-    <param>
-      <key>value</key>
-      <value>1e6</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(1032, 19)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>bandwidth_conf</value>
-    </param>
-    <param>
-      <key>option</key>
-      <value>bandwidth</value>
-    </param>
-    <param>
-      <key>section</key>
-      <value>simulation</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>real</value>
-    </param>
-    <param>
-      <key>writeback</key>
-      <value>bandwidth</value>
-    </param>
-  </block>
-  <block>
-    <key>variable_qtgui_range</key>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>value</key>
       <value>0.0</value>
     </param>
     <param>
@@ -661,143 +551,6 @@
     </param>
   </block>
   <block>
-    <key>variable</key>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(464, 27)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>taps</value>
-    </param>
-    <param>
-      <key>value</key>
-      <value>firdes.low_pass(1,samp_rate,bandwidth,transwidth)</value>
-    </param>
-  </block>
-  <block>
-    <key>variable_qtgui_range</key>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>value</key>
-      <value>transwidth_conf</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(656, 27)</value>
-    </param>
-    <param>
-      <key>gui_hint</key>
-      <value>11,1</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>transwidth</value>
-    </param>
-    <param>
-      <key>label</key>
-      <value></value>
-    </param>
-    <param>
-      <key>min_len</key>
-      <value>200</value>
-    </param>
-    <param>
-      <key>orient</key>
-      <value>Qt.Horizontal</value>
-    </param>
-    <param>
-      <key>start</key>
-      <value>samp_rate*1e-3</value>
-    </param>
-    <param>
-      <key>step</key>
-      <value>1e3</value>
-    </param>
-    <param>
-      <key>stop</key>
-      <value>samp_rate/4</value>
-    </param>
-    <param>
-      <key>rangeType</key>
-      <value>float</value>
-    </param>
-    <param>
-      <key>widget</key>
-      <value>counter_slider</value>
-    </param>
-  </block>
-  <block>
-    <key>variable_config</key>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>config_file</key>
-      <value>ccsds.conf</value>
-    </param>
-    <param>
-      <key>value</key>
-      <value>1e6</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(776, 11)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>transwidth_conf</value>
-    </param>
-    <param>
-      <key>option</key>
-      <value>transwidth</value>
-    </param>
-    <param>
-      <key>section</key>
-      <value>simulation</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>real</value>
-    </param>
-    <param>
-      <key>writeback</key>
-      <value>transwidth</value>
-    </param>
-  </block>
-  <block>
     <key>variable_qtgui_label</key>
     <param>
       <key>comment</key>
@@ -997,7 +750,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1472, 435)</value>
+      <value>(1272, 440)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1268,7 +1021,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1856, 547)</value>
+      <value>(1688, 542)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1429,7 +1182,7 @@
     </param>
     <param>
       <key>len_tag_key</key>
-      <value>"packet_len"</value>
+      <value>"packet_lenn"</value>
     </param>
     <param>
       <key>maxoutbuf</key>
@@ -1535,7 +1288,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(2480, 443)</value>
+      <value>(2264, 447)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1610,7 +1363,7 @@
     </param>
     <param>
       <key>len_tag_key</key>
-      <value>"packet_len"</value>
+      <value>"packet_lenn"</value>
     </param>
     <param>
       <key>maxoutbuf</key>
@@ -1657,7 +1410,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1624, 435)</value>
+      <value>(1456, 440)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1724,7 +1477,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(2080, 467)</value>
+      <value>(1864, 468)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1826,7 +1579,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1832, 473)</value>
+      <value>(1664, 473)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1877,7 +1630,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(2296, 467)</value>
+      <value>(2080, 468)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1898,65 +1651,6 @@
     <param>
       <key>modulus</key>
       <value>2</value>
-    </param>
-  </block>
-  <block>
-    <key>freq_xlating_fir_filter_xxx</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>center_freq</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>decim</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(1224, 443)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>freq_xlating_fir_filter_xxx_0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>samp_rate</key>
-      <value>samp_rate</value>
-    </param>
-    <param>
-      <key>taps</key>
-      <value>firdes.low_pass(1,samp_rate,bandwidth,transwidth)</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>ccc</value>
     </param>
   </block>
   <block>
@@ -2129,7 +1823,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1808, 387)</value>
+      <value>(1616, 381)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -2492,7 +2186,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1272, 331)</value>
+      <value>(1272, 278)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -2512,7 +2206,7 @@
     </param>
     <param>
       <key>legend</key>
-      <value>True</value>
+      <value>False</value>
     </param>
     <param>
       <key>alpha1</key>
@@ -2524,7 +2218,7 @@
     </param>
     <param>
       <key>label1</key>
-      <value>noisy signal</value>
+      <value></value>
     </param>
     <param>
       <key>width1</key>
@@ -2688,7 +2382,7 @@
     </param>
     <param>
       <key>nconnections</key>
-      <value>2</value>
+      <value>1</value>
     </param>
     <param>
       <key>showports</key>
@@ -3050,7 +2744,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1856, 627)</value>
+      <value>(1696, 622)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -3303,7 +2997,7 @@
   </connection>
   <connection>
     <source_block_id>blocks_rotator_cc_0</source_block_id>
-    <sink_block_id>freq_xlating_fir_filter_xxx_0</sink_block_id>
+    <sink_block_id>analog_agc2_xx_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -3378,17 +3072,5 @@
     <sink_block_id>ccsds_decoder</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>freq_xlating_fir_filter_xxx_0</source_block_id>
-    <sink_block_id>analog_agc2_xx_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>freq_xlating_fir_filter_xxx_0</source_block_id>
-    <sink_block_id>qtgui_freq_sink_x_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>1</sink_key>
   </connection>
 </flow_graph>
