@@ -29,6 +29,7 @@ list(APPEND ccsds_sources
     fec-3.0.1/decode_rs_ccsds.c
     fec-3.0.1/encode_rs_8.c
     fec-3.0.1/decode_rs_8.c
+    rs_tables.cc
     reed_solomon.cc
     ccsds_encoder_impl.cc
     ccsds_decoder_impl.cc
