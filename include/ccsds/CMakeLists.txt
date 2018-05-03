@@ -24,5 +24,5 @@ install(FILES
     api.h
     ccsds_encoder.h
     ccsds_decoder.h
-    DESTINATION include/ccsds
+    correlator.h DESTINATION include/ccsds
 )
