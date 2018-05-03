@@ -32,29 +32,29 @@ class qa_ccsds_encoder (gr_unittest.TestCase):
     def tearDown (self):
         self.tb = None
 
-    def test_001_t (self):
-        port = pmt.intern("in")
-        enc = ccsds.ccsds_encoder()
-        dec = ccsds.ccsds_decoder()
-        dbg = blocks.message_debug()
-        self.tb.connect(enc, dec)
-        self.tb.msg_connect(dec, "out", dbg, "store")
-
-        src_data = [x%256 for x in range(1115)]
-        src_vec = pmt.init_u8vector(len(src_data), src_data)
-        msg = pmt.cons(pmt.PMT_NIL, src_vec)
-
-        self.tb.start()
-        enc.to_basic_block()._post(port, msg)
-
-        while dbg.num_messages() < 1:
-            time.sleep(0.1)
-
-        self.tb.stop()
-        self.tb.wait()
-
-        mgs2 = dbg.get_message(0)
-        print pmt.cdr(msg)
+#    def test_001_t (self):
+#        port = pmt.intern("in")
+#        enc = ccsds.ccsds_encoder()
+#        dec = ccsds.ccsds_decoder()
+#        dbg = blocks.message_debug()
+#        self.tb.connect(enc, dec)
+#        self.tb.msg_connect(dec, "out", dbg, "store")
+#
+#        src_data = [x%256 for x in range(1115)]
+#        src_vec = pmt.init_u8vector(len(src_data), src_data)
+#        msg = pmt.cons(pmt.PMT_NIL, src_vec)
+#
+#        self.tb.start()
+#        enc.to_basic_block()._post(port, msg)
+#
+#        while dbg.num_messages() < 1:
+#            time.sleep(0.1)
+#
+#        self.tb.stop()
+#        self.tb.wait()
+#
+#        mgs2 = dbg.get_message(0)
+#        print pmt.cdr(msg)
 
 
 if __name__ == '__main__':
