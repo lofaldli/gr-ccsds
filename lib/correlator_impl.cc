@@ -26,7 +26,7 @@
 #include <volk/volk.h>
 #include "correlator_impl.h"
 
-#if 0
+#if 1
 #define debug_print printf
 #else
 #define debug_print
@@ -114,17 +114,13 @@ namespace gr {
     }
 
     void correlator_impl::enter_state(const state_t state) {
-        debug_print("enter_state ");
+        debug_print("enter_state: %s\n", state_names[state]);
 
         switch (state) {
         case SEARCH:
-            debug_print("SEARCH\n");
-
             d_asm_buf = 0;
             break;
         case LOCK:
-            debug_print("LOCK\n");
-
             d_byte_buf = 0;
             d_bit_ctr = 0;
             d_frame_buffer_len = 0;

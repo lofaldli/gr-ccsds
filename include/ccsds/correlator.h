@@ -51,7 +51,14 @@ namespace gr {
                        const uint64_t asm_mask=0xffffffff, 
                        const uint8_t threshold=2, 
                        const size_t frame_len=223);
+
     };
+
+    enum state_t { SEARCH, LOCK };
+    const char* state_names[] = { "SEARCH", "LOCK" };
+
+    enum ambiguity_t { NONE, INVERTED };
+    const char* ambiguity_names[] = { "NONE", "INVERTED" };
 
   } // namespace ccsds
 } // namespace gr
