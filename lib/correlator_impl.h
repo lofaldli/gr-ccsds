@@ -27,13 +27,6 @@
 namespace gr {
   namespace ccsds {
 
-/*
-    enum state_t { SEARCH, LOCK };
-    const char* state_names[] = { "SEARCH", "LOCK" };
-    enum ambiguity_t { NONE, INVERTED };
-    const char* ambiguity_names[] = { "NONE", "INVERTED" };
-*/
-
     class correlator_impl : public correlator {
       private:
         const uint64_t d_asm, d_asm_mask;
@@ -60,6 +53,8 @@ namespace gr {
         bool check_asm(const uint64_t asm_buf);
         void enter_state(const state_t state);
         void publish_msg();
+
+        uint64_t frame_count() const;
     };
 
   } // namespace ccsds

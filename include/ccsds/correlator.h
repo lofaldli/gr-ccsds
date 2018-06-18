@@ -52,6 +52,11 @@ namespace gr {
                        const uint8_t threshold=2, 
                        const size_t frame_len=223);
 
+      /*!
+       * \brief number of frames detected
+       */
+      virtual uint64_t frame_count() const = 0;
+
     };
 
     enum state_t { SEARCH, LOCK };

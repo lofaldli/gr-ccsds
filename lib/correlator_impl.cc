@@ -139,6 +139,10 @@ namespace gr {
         message_port_pub(pmt::mp("out"), pmt::cons(meta, data));
     }
 
+    uint64_t correlator_impl::frame_count() const {
+        return d_frame_count;
+    }
+
   } /* namespace ccsds */
 } /* namespace gr */
 
