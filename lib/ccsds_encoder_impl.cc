@@ -120,7 +120,7 @@ namespace gr {
       //copy_stream_tags();
 
       uint8_t rs_block[RS_BLOCK_LEN];
-      for (uint8_t i=0; i<d_interleave; i++) {
+      for (uint8_t i=0; i<d_n_interleave; i++) {
 
           // copy data from input to rs block
           memcpy(rs_block, &in[i*RS_DATA_LEN], RS_DATA_LEN);
