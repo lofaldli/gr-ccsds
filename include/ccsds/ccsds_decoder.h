@@ -42,7 +42,7 @@ namespace gr {
        * \brief Return a shared_ptr to a new instance of ccsds::ccsds_decoder.
        *
        */
-      static sptr make(int threshold=0, bool rs_decode=true, bool descramble=true, bool deinterleave=true, bool verbose=false, bool printing=false);
+      static sptr make(int threshold=0, bool rs_decode=true, bool descramble=true, bool deinterleave=true, bool verbose=false, bool printing=false, int n_interleave=5);
 
       /*!
        * \brief return number of received frames

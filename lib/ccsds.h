@@ -30,7 +30,7 @@
 #define RS_DATA_LEN 223
 #define RS_PARITY_LEN 32
 #define RS_BLOCK_LEN (RS_DATA_LEN + RS_PARITY_LEN)
-#define RS_NBLOCKS 5
+#define RS_MAX_NBLOCKS 8
 #define RS_GFPOLY 0x187 // (x^8 + x^7 + x^2 + x^1 + 1)
 #define RS_APRIM 11
 #define RS_FCS 112
@@ -39,13 +39,13 @@
 #define SYNC_WORD_LEN 4
 //#define SYNC_WORD 0x1acffc1d
 #define SCRAMBLER_POLY_LEN 255
-#define DATA_LEN (RS_DATA_LEN * RS_NBLOCKS)
-#define CODEWORD_LEN (RS_BLOCK_LEN * RS_NBLOCKS)
-#define TOTAL_FRAME_LEN (SYNC_WORD_LEN + CODEWORD_LEN)
+#define DATA_MAX_LEN (RS_DATA_LEN * RS_MAX_NBLOCKS)
+#define CODEWORD_MAX_LEN (RS_BLOCK_LEN * RS_MAX_NBLOCKS)
+//#define TOTAL_FRAME_LEN (SYNC_WORD_LEN + CODEWORD_LEN)
 
 struct ccsds_tx_pkt {
     uint8_t sync_word[SYNC_WORD_LEN];
-    uint8_t codeword[CODEWORD_LEN];
+    uint8_t codeword[CODEWORD_MAX_LEN];
 }__attribute__((packed));
 
 const uint8_t SYNC_WORD[SYNC_WORD_LEN] = {0x1a, 0xcf, 0xfc, 0x1d};

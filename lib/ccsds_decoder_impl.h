@@ -37,6 +37,7 @@ namespace gr {
          bool d_descramble;
          bool d_verbose;
          bool d_printing;
+         int  d_n_interleave;
 
          uint32_t d_sync_word;
          uint8_t d_decoder_state;
@@ -46,9 +47,13 @@ namespace gr {
          uint32_t d_num_frames_received;
          uint32_t d_num_frames_decoded;
          uint32_t d_num_subframes_decoded;
-         uint8_t d_codeword[CODEWORD_LEN];
-         uint8_t d_payload[DATA_LEN];
+         uint8_t d_codeword[CODEWORD_MAX_LEN];
+         uint8_t d_payload[DATA_MAX_LEN];
          reed_solomon d_rs;
+
+         int data_len() { return RS_DATA_LEN * d_n_interleave; }
+         int codeword_len() { return RS_BLOCK_LEN * d_n_interleave; }
+         int total_frame_len() { return SYNC_WORD_LEN + codeword_len(); }
 
          void enter_sync_search();
          void enter_codeword();
@@ -56,7 +61,7 @@ namespace gr {
          bool decode_frame();
 
      public:
-      ccsds_decoder_impl(int threshold, bool rs_decode, bool deinterleave, bool descramble, bool verbose, bool printing);
+      ccsds_decoder_impl(int threshold, bool rs_decode, bool deinterleave, bool descramble, bool verbose, bool printing, int n_interleave);
       ~ccsds_decoder_impl();
 
       uint32_t num_frames_received() const {return d_num_frames_received;}
