@@ -36,13 +36,13 @@ namespace gr {
   namespace ccsds {
 
     ccsds_decoder::sptr
-    ccsds_decoder::make(int threshold, bool rs_decode, bool deinterleave, bool descramble, bool verbose, bool printing)
+    ccsds_decoder::make(int threshold, bool rs_decode, bool deinterleave, bool descramble, bool verbose, bool printing, int n_interleave)
     {
       return gnuradio::get_initial_sptr
-        (new ccsds_decoder_impl(threshold, rs_decode, deinterleave, descramble, verbose, printing));
+        (new ccsds_decoder_impl(threshold, rs_decode, deinterleave, descramble, verbose, printing, n_interleave));
     }
 
-    ccsds_decoder_impl::ccsds_decoder_impl(int threshold, bool rs_decode, bool deinterleave, bool descramble, bool verbose, bool printing)
+    ccsds_decoder_impl::ccsds_decoder_impl(int threshold, bool rs_decode, bool deinterleave, bool descramble, bool verbose, bool printing, int n_interleave)
       : gr::sync_block("ccsds_decoder",
               gr::io_signature::make(1, 1, sizeof(uint8_t)),
               gr::io_signature::make(0, 0, 0)),
@@ -52,6 +52,7 @@ namespace gr {
         d_descramble(descramble),
         d_verbose(verbose),
         d_printing(printing),
+        d_n_interleave(n_interleave),
         d_num_frames_received(0),
         d_num_frames_decoded(0),
         d_num_subframes_decoded(0)
@@ -98,13 +99,13 @@ namespace gr {
                       d_bit_counter = 0;
                   }
                   // once the full codeword is loaded, try to decode the packet
-                  if (d_byte_counter == CODEWORD_LEN) {
-                      if (d_verbose) printf("\tloaded codeword of length %i\n", CODEWORD_LEN);
-                      if (d_printing) print_bytes(d_codeword, CODEWORD_LEN);
+                  if (d_byte_counter == codeword_len()) {
+                      if (d_verbose) printf("\tloaded codeword of length %i\n", codeword_len());
+                      if (d_printing) print_bytes(d_codeword, codeword_len());
 
                       bool success = decode_frame();
                       if (success) {
-                          pmt::pmt_t pdu(pmt::cons(pmt::PMT_NIL, pmt::make_blob(d_payload, DATA_LEN)));
+                          pmt::pmt_t pdu(pmt::cons(pmt::PMT_NIL, pmt::make_blob(d_payload, data_len())));
                           message_port_pub(pmt::mp("out"), pdu);
                       }
 
@@ -151,17 +152,17 @@ namespace gr {
         bool success = true;
 
         if (d_descramble) {
-            descramble(d_codeword, CODEWORD_LEN);
+            descramble(d_codeword, codeword_len());
         }
 
         // deinterleave and decode rs blocks
         uint8_t rs_block[RS_BLOCK_LEN];
         int8_t nerrors;
-        for (uint8_t i=0; i<RS_NBLOCKS; i++) {
+        for (uint8_t i=0; i<d_n_interleave; i++) {
             for (uint8_t j=0; j<RS_BLOCK_LEN; j++) {
 
                 if (d_deinterleave) {
-                    rs_block[j] = d_codeword[i+(j*RS_NBLOCKS)];
+                    rs_block[j] = d_codeword[i+(j*d_n_interleave)];
                 } else {
                     rs_block[j] = d_codeword[i*RS_BLOCK_LEN + j];
                 }

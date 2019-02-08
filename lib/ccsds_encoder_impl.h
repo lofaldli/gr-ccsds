@@ -37,6 +37,7 @@ namespace gr {
          bool d_scramble;
          bool d_printing;
          bool d_verbose;
+         int  d_n_interleave;
 
          uint32_t d_num_frames;
 
@@ -49,11 +50,17 @@ namespace gr {
 
          void copy_stream_tags();
 
+         int data_len() { return RS_DATA_LEN * d_n_interleave; }
+         int codeword_len() { return RS_BLOCK_LEN * d_n_interleave; }
+         int total_frame_len() { return SYNC_WORD_LEN + codeword_len(); }
+
+
+
      protected:
       int calculate_output_stream_length(const gr_vector_int &ninput_items);
 
      public:
-      ccsds_encoder_impl(size_t itemsize, const std::string& len_tag_key, bool rs_encode, bool interleave, bool scramble, bool printing, bool verbose);
+      ccsds_encoder_impl(size_t itemsize, const std::string& len_tag_key, bool rs_encode, bool interleave, bool scramble, bool printing, bool verbose, int n_interleave);
       ~ccsds_encoder_impl();
 
       uint32_t num_frames() const {return d_num_frames;}
