@@ -19,7 +19,7 @@ then clone this repo and follow these instructions
 
     mkdir build/
     cd build/
-    cmake .. -DCMAKE_INSTALL_PREFIX=$(gnuradio-conifg-info --prefix)
+    cmake .. -DCMAKE_INSTALL_PREFIX=$(gnuradio-config-info --prefix)
     make
     [sudo] make install
 
