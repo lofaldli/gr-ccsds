@@ -38,6 +38,7 @@ namespace gr {
          bool d_verbose;
          bool d_printing;
          int  d_n_interleave;
+         bool d_dual_basis;
 
          uint32_t d_sync_word;
          uint8_t d_decoder_state;
@@ -61,7 +62,7 @@ namespace gr {
          bool decode_frame();
 
      public:
-      ccsds_decoder_impl(int threshold, bool rs_decode, bool deinterleave, bool descramble, bool verbose, bool printing, int n_interleave);
+      ccsds_decoder_impl(int threshold, bool rs_decode, bool deinterleave, bool descramble, bool verbose, bool printing, int n_interleave, bool dual_basis);
       ~ccsds_decoder_impl();
 
       uint32_t num_frames_received() const {return d_num_frames_received;}

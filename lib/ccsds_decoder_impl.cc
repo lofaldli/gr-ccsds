@@ -36,13 +36,13 @@ namespace gr {
   namespace ccsds {
 
     ccsds_decoder::sptr
-    ccsds_decoder::make(int threshold, bool rs_decode, bool deinterleave, bool descramble, bool verbose, bool printing, int n_interleave)
+    ccsds_decoder::make(int threshold, bool rs_decode, bool deinterleave, bool descramble, bool verbose, bool printing, int n_interleave, bool dual_basis)
     {
       return gnuradio::get_initial_sptr
-        (new ccsds_decoder_impl(threshold, rs_decode, deinterleave, descramble, verbose, printing, n_interleave));
+        (new ccsds_decoder_impl(threshold, rs_decode, deinterleave, descramble, verbose, printing, n_interleave, dual_basis));
     }
 
-    ccsds_decoder_impl::ccsds_decoder_impl(int threshold, bool rs_decode, bool deinterleave, bool descramble, bool verbose, bool printing, int n_interleave)
+    ccsds_decoder_impl::ccsds_decoder_impl(int threshold, bool rs_decode, bool deinterleave, bool descramble, bool verbose, bool printing, int n_interleave, bool dual_basis)
       : gr::sync_block("ccsds_decoder",
               gr::io_signature::make(1, 1, sizeof(uint8_t)),
               gr::io_signature::make(0, 0, 0)),
@@ -53,6 +53,7 @@ namespace gr {
         d_verbose(verbose),
         d_printing(printing),
         d_n_interleave(n_interleave),
+        d_dual_basis(dual_basis),
         d_num_frames_received(0),
         d_num_frames_decoded(0),
         d_num_subframes_decoded(0)
@@ -169,7 +170,7 @@ namespace gr {
 
             }
             if (d_rs_decode) {
-                nerrors = d_rs.decode(rs_block);
+                nerrors = d_rs.decode(rs_block, d_dual_basis);
                 if (nerrors == -1) {
                     if (d_verbose) printf("\tcould not decode rs block #%i\n", i);
                     success = false;

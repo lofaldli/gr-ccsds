@@ -4,7 +4,7 @@
   <key>ccsds_ccsds_encoder</key>
   <category>ccsds</category>
   <import>import ccsds</import>
-  <make>ccsds.ccsds_encoder($type.size, $len_tag_key, $rs_encode, $interleave, $scramble, $printing, $verbose, $n_interleave)</make>
+  <make>ccsds.ccsds_encoder($type.size, $len_tag_key, $rs_encode, $interleave, $scramble, $printing, $verbose, $n_interleave, $dual_basis)</make>
   <param>
       <name>Input type</name>
       <key>type</key>
@@ -44,6 +44,20 @@
   <param>
     <name>Interleave</name>
     <key>interleave</key>
+    <value>True</value>
+    <type>enum</type>
+    <option>
+        <name>Yes</name>
+        <key>True</key>
+    </option>
+    <option>
+        <name>No</name>
+        <key>False</key>
+    </option>
+  </param>
+  <param>
+    <name>Dual Basis</name>
+    <key>dual_basis</key>
     <value>True</value>
     <type>enum</type>
     <option>

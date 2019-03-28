@@ -24,6 +24,7 @@
 
 #include <ccsds/api.h>
 #include <stdint.h>
+#include <stdbool.h>
 
 namespace gr {
     namespace ccsds {
@@ -34,8 +35,8 @@ namespace gr {
                 reed_solomon();
                 ~reed_solomon();
 
-                void encode(uint8_t *data);
-                int16_t decode(uint8_t *data);
+                void encode(uint8_t *data, bool use_dual_basis);
+                int16_t decode(uint8_t *data, bool use_dual_basis);
         };
 
     }

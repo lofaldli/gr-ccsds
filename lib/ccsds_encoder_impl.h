@@ -38,6 +38,7 @@ namespace gr {
          bool d_printing;
          bool d_verbose;
          int  d_n_interleave;
+         bool d_dual_basis;
 
          uint32_t d_num_frames;
 
@@ -60,7 +61,7 @@ namespace gr {
       int calculate_output_stream_length(const gr_vector_int &ninput_items);
 
      public:
-      ccsds_encoder_impl(size_t itemsize, const std::string& len_tag_key, bool rs_encode, bool interleave, bool scramble, bool printing, bool verbose, int n_interleave);
+      ccsds_encoder_impl(size_t itemsize, const std::string& len_tag_key, bool rs_encode, bool interleave, bool scramble, bool printing, bool verbose, int n_interleave, bool dual_basis);
       ~ccsds_encoder_impl();
 
       uint32_t num_frames() const {return d_num_frames;}
