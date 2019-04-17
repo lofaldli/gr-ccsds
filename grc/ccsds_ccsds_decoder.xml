@@ -4,7 +4,7 @@
   <key>ccsds_ccsds_decoder</key>
   <category>ccsds</category>
   <import>import ccsds</import>
-  <make>ccsds.ccsds_decoder($threshold, $rs_decode, $deinterleave, $descramble, $verbose, $printing, $n_deinterleave)</make>
+  <make>ccsds.ccsds_decoder($threshold, $rs_decode, $deinterleave, $descramble, $verbose, $printing, $n_deinterleave, $dual_basis)</make>
   <param>
     <name>Threshold</name>
     <key>threshold</key>
@@ -14,6 +14,20 @@
   <param>
     <name>RS Decode</name>
     <key>rs_decode</key>
+    <value>True</value>
+    <type>enum</type>
+    <option>
+        <name>Yes</name>
+        <key>True</key>
+    </option>
+    <option>
+        <name>No</name>
+        <key>False</key>
+    </option>
+  </param>
+  <param>
+    <name>Dual Basis</name>
+    <key>dual_basis</key>
     <value>True</value>
     <type>enum</type>
     <option>

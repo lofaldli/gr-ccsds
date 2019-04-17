@@ -33,16 +33,16 @@ namespace gr {
   namespace ccsds {
 
     ccsds_encoder::sptr
-    ccsds_encoder::make(size_t itemsize, const std::string& len_tag_key, bool rs_encode, bool interleave, bool scramble, bool printing, bool verbose, int n_interleave)
+    ccsds_encoder::make(size_t itemsize, const std::string& len_tag_key, bool rs_encode, bool interleave, bool scramble, bool printing, bool verbose, int n_interleave, bool dual_basis)
     {
       return gnuradio::get_initial_sptr
-        (new ccsds_encoder_impl(itemsize, len_tag_key, rs_encode, interleave, scramble, printing, verbose, n_interleave));
+        (new ccsds_encoder_impl(itemsize, len_tag_key, rs_encode, interleave, scramble, printing, verbose, n_interleave, dual_basis));
     }
 
     /*
      * The private constructor
      */
-    ccsds_encoder_impl::ccsds_encoder_impl(size_t itemsize, const std::string& len_tag_key, bool rs_encode, bool interleave, bool scramble, bool printing, bool verbose, int n_interleave)
+    ccsds_encoder_impl::ccsds_encoder_impl(size_t itemsize, const std::string& len_tag_key, bool rs_encode, bool interleave, bool scramble, bool printing, bool verbose, int n_interleave, bool dual_basis)
       : gr::tagged_stream_block("ccsds_encoder",
               gr::io_signature::make(itemsize==0 ? 0:1, itemsize==0 ? 0:1, itemsize),
               gr::io_signature::make(1, 1, sizeof(uint8_t)), len_tag_key),
@@ -53,6 +53,7 @@ namespace gr {
         d_printing(printing),
         d_verbose(verbose),
         d_n_interleave(n_interleave),
+        d_dual_basis(dual_basis),
         d_curr_len(0),
         d_num_frames(0)
     {
@@ -127,7 +128,7 @@ namespace gr {
 
           // calculate parity data
           if (d_rs_encode) {
-              d_rs.encode(rs_block);
+              d_rs.encode(rs_block, d_dual_basis);
           } else {
               memset(&rs_block[RS_DATA_LEN], 0, RS_PARITY_LEN);
           }
