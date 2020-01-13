@@ -124,7 +124,12 @@ namespace gr {
       for (uint8_t i=0; i<d_n_interleave; i++) {
 
           // copy data from input to rs block
-          memcpy(rs_block, &in[i*RS_DATA_LEN], RS_DATA_LEN);
+          if (d_interleave) {
+              for (uint8_t j=0; j<RS_BLOCK_LEN; j++)
+                  rs_block[j] = in[i + (d_n_interleave*j)];
+          } else {
+              memcpy(rs_block, &in[i*RS_DATA_LEN], RS_DATA_LEN);
+          }
 
           // calculate parity data
           if (d_rs_encode) {

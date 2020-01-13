@@ -179,7 +179,13 @@ namespace gr {
                     d_num_subframes_decoded++;
                 }
             }
-            memcpy(&d_payload[i*RS_DATA_LEN], rs_block, RS_DATA_LEN);
+            if (d_deinterleave) {
+                for (uint8_t j=0; j<RS_DATA_LEN; j++) {
+                    d_payload[i+(j*d_n_interleave)] = rs_block[j];
+                }
+            } else {
+                memcpy(&d_payload[i*RS_DATA_LEN], rs_block, RS_DATA_LEN);
+            }
         }
 
         if (success) d_num_frames_decoded++;
