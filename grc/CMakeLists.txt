@@ -17,7 +17,8 @@
 # the Free Software Foundation, Inc., 51 Franklin Street,
 # Boston, MA 02110-1301, USA.
 install(FILES
-    ccsds_ccsds_encoder.xml
-    ccsds_ccsds_decoder.xml
-    ccsds_correlator.xml DESTINATION share/gnuradio/grc/blocks
+    ccsds_ccsds_encoder.block.yml
+    ccsds_ccsds_decoder.block.yml
+    ccsds_correlator.block.yml
+    DESTINATION share/gnuradio/grc/blocks
 )

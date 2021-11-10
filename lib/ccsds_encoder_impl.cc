@@ -80,7 +80,7 @@ namespace gr {
 
             if (d_curr_len != 0) return 0;
 
-            pmt::pmt_t msg(delete_head_blocking(pmt::mp("in"), 100));
+            pmt::pmt_t msg(delete_head_nowait(pmt::mp("in")));
             if (msg.get() == NULL) {
                 return 0;
             }
