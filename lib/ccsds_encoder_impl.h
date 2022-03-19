@@ -21,7 +21,7 @@
 #ifndef INCLUDED_CCSDS_CCSDS_ENCODER_IMPL_H
 #define INCLUDED_CCSDS_CCSDS_ENCODER_IMPL_H
 
-#include <ccsds/ccsds_encoder.h>
+#include <gnuradio/ccsds/ccsds_encoder.h>
 #include "ccsds.h"
 #include "reed_solomon.h"
 

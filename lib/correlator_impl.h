@@ -21,7 +21,7 @@
 #ifndef INCLUDED_CCSDS_CORRELATOR_IMPL_H
 #define INCLUDED_CCSDS_CORRELATOR_IMPL_H
 
-#include <ccsds/correlator.h>
+#include <gnuradio/ccsds/correlator.h>
 #include <vector>
 
 namespace gr {

@@ -22,7 +22,7 @@
 #ifndef INCLUDED_REED_SOLOMON_H
 #define INCLUDED_REED_SOLOMON_H
 
-#include <ccsds/api.h>
+#include <gnuradio/ccsds/api.h>
 #include <stdint.h>
 #include <stdbool.h>
 
